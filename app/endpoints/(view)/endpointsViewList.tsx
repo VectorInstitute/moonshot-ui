@@ -25,18 +25,6 @@ function EndpointsViewList({ endpoints, children }: EndpointsViewListProps) {
       minHeight={750}
       bgColor={colors.moongray['950']}>
       <div className="relative h-full">
-        <header className="flex gap-5 w-full mb-3 justify-between items-end">
-          <h1 className="text-[1.6rem] text-white mt-3">Endpoints</h1>
-          <Link href={`/endpoints/new`}>
-            <Button
-              size="md"
-              mode={ButtonType.OUTLINE}
-              leftIconName={IconName.Plus}
-              text="Create New Endpoint"
-              hoverBtnColor={colors.moongray[800]}
-            />
-          </Link>
-        </header>
         <main
           className="grid grid-cols-2 gap-5"
           style={{ height: 'calc(100% - 140px)' }}>

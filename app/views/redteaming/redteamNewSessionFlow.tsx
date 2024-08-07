@@ -24,7 +24,6 @@ import { RedteamRunForm } from './redteamRunForm';
 
 const flowSteps = [
   'Connect Endpoint',
-  'Set Optional Utilities',
   'Start Red Teaming',
 ];
 

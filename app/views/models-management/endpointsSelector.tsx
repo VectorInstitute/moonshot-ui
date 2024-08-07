@@ -41,18 +41,6 @@ function EndpointSelectVew(props: EndpointSelectViewProps) {
             'Select the Endpoint(s) to be tested'
           )}
         </h2>
-        <Button
-          size="sm"
-          text="Create New Endpoint"
-          textSize="1.1rem"
-          textWeight="500"
-          textColor={colors.white}
-          mode={ButtonType.OUTLINE}
-          type="button"
-          leftIconName={IconName.Plus}
-          hoverBtnColor={colors.moongray[800]}
-          onClick={onCreateClick}
-        />
       </section>
       <div className="relative flex flex-col min-h-[300px] px-[10%] w-[100%] h-full items-center">
         {isLoading ? (
@@ -100,23 +88,6 @@ function EndpointSelectVew(props: EndpointSelectViewProps) {
                 </SelectListItem>
               );
             })}
-            <li
-              className="flex flex-row gap-2 border border-dashed 
-                bg-moongray-950 rounded-xl p-8 items-center cursor-pointer
-                mb-[15px] justify-between h-[100px]"
-              style={{ flexBasis: '49%' }}
-              onClick={onCreateClick}>
-              <div className="flex flex-col w-full">
-                <h4 className="text-white text-center text-[1rem]">
-                  Testing a new Endpoint?
-                </h4>
-                <p
-                  className="text-center text-[0.8rem]"
-                  style={{ color: colors.moonpurplelight }}>
-                  Create New Endpoint
-                </p>
-              </div>
-            </li>
           </ul>
         )}
       </div>

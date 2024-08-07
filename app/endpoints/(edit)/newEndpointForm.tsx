@@ -299,11 +299,6 @@ function NewEndpointForm(props: NewEndpointFormProps) {
 
   const formSection = (
     <>
-      <h2 className="text-[1.8rem] font-light text-white mb-4">
-        {endpointToEdit
-          ? `Update ${endpointToEdit.name}`
-          : 'Create New Endpoint'}
-      </h2>
       {!showMoreConfig ? (
         <div className="w-[100%] flex justify-between">
           <div className="flex flex-col w-[50%] gap-2">

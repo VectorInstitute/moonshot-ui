@@ -6,16 +6,15 @@ import { ActionCard } from '@/app/components/actionCard/actionCard';
 import { Banner } from '@/app/components/banner/banner';
 import { colors } from '@/app/views/shared-components/customColors';
 import {
-  resetBenchmarkCookbooks,
-  resetBenchmarkModels,
+  resetRedteamModels,
   useAppDispatch,
 } from '@/lib/redux';
 
 function EntryBanners() {
   const dispatch = useAppDispatch();
   function handleStartNewRunClick() {
-    dispatch(resetBenchmarkCookbooks());
-    dispatch(resetBenchmarkModels());
+    //dispatch(resetBenchmarkCookbooks());
+    dispatch(resetRedteamModels());
   }
   return (
     <div className="grid grid-cols-1 grid-rows-[1rem, 1fr] gap-2">
@@ -28,8 +27,7 @@ function EntryBanners() {
           buttonTextColor={colors.white}
           bannerText={
             <span>
-              Focus on what&apos;s important, <br /> Run only the best and most
-              relevant tests.
+              Welcome to the MLHC Hackathon!<br/>Use the Red Teaming utility to trick a LLM into saying terrible things.
             </span>
           }
           buttonText="Get Started"
@@ -41,46 +39,6 @@ function EntryBanners() {
             />
           </div>
         </Banner>
-      </section>
-      <section>
-        <div className="grid grid-cols-3 gap-2">
-          <div className="col-span-3 grid grid-cols-3 gap-[1.7%]">
-            <Link
-              href="/redteaming/sessions/new"
-              onClick={handleStartNewRunClick}>
-              <ActionCard
-                title="Discover"
-                description="new vulnerabilities"
-                descriptionColor={colors.moongray[300]}
-                cardColor={colors.moongray[950]}
-                iconName={IconName.Spacesuit}
-                actionText="Start Red Teaming"
-              />
-            </Link>
-            <Link
-              href="/benchmarking/session/new"
-              onClick={handleStartNewRunClick}>
-              <ActionCard
-                title="Evaluate"
-                description="against standard tests"
-                descriptionColor={colors.moongray[300]}
-                cardColor={colors.moongray[950]}
-                iconName={IconName.CheckList}
-                actionText="Run Benchmarks"
-              />
-            </Link>
-            <Link href="/benchmarking/cookbooks/new">
-              <ActionCard
-                title="Create"
-                description="cookbooks"
-                descriptionColor={colors.moongray[300]}
-                cardColor={colors.moongray[950]}
-                iconName={IconName.Book}
-                actionText="Select Recipes"
-              />
-            </Link>
-          </div>
-        </div>
       </section>
     </div>
   );

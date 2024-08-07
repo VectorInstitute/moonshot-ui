@@ -33,18 +33,8 @@ export default function RedteamingHomePage() {
           style={{ width: '40%' }}>
           <SubmenuButton
             width="100%"
-            text="View Past Sessions"
+            text="View Sessions"
             menuIconName={IconName.HistoryClock}
-            textColor={colors.white}
-          />
-        </Link>
-        <Link
-          href="/redteaming/attackmodules"
-          style={{ width: '40%' }}>
-          <SubmenuButton
-            width="100%"
-            text="View Attack Modules"
-            menuIconName={IconName.MoonAttackStrategy}
             textColor={colors.white}
           />
         </Link>
