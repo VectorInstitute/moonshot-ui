@@ -83,7 +83,7 @@ function Notifications() {
           color={iconColor}
           name={IconName.Bell}
           size={30}
-          style={{ cursor: 'pointer' }}
+          style={{ display: "none" }}
         />
       </section>
       {showStatusPanel && (

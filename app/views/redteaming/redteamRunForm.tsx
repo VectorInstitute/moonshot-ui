@@ -52,6 +52,7 @@ function RedteamRunForm() {
     });
     if ('error' in response) {
       console.error(response.error);
+      alert("Failed to create new session. Please make sure to pick a unique session name that is not already in use.");
       return;
     }
     dispatch(resetRedteamModels());

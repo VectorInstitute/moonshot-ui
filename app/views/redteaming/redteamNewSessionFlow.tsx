@@ -58,10 +58,6 @@ function RedteamNewSessionFlow() {
 
   function nextViewHandler() {
     if (currentView === RedteamingNewSessionViews.ENDPOINTS_SELECTION) {
-      setCurrentView(RedteamingNewSessionViews.ATTACK_SELECTION);
-      return;
-    }
-    if (currentView === RedteamingNewSessionViews.ATTACK_SELECTION) {
       setCurrentView(RedteamingNewSessionViews.RUN_FORM);
       return;
     }
@@ -69,10 +65,6 @@ function RedteamNewSessionFlow() {
 
   function previousViewHandler() {
     if (currentView === RedteamingNewSessionViews.RUN_FORM) {
-      setCurrentView(RedteamingNewSessionViews.ATTACK_SELECTION);
-      return;
-    }
-    if (currentView === RedteamingNewSessionViews.ATTACK_SELECTION) {
       setCurrentView(RedteamingNewSessionViews.ENDPOINTS_SELECTION);
       return;
     }
