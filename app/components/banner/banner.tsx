@@ -41,7 +41,7 @@ function Banner(props: PropsWithChildren<BannerProps>) {
           {bannerText}
         </p>
         <Link
-          href="/benchmarking/session/new"
+          href="/redteaming"
           onClick={onBtnClick}>
           <Button
             type="button"

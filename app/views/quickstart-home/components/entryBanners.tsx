@@ -13,8 +13,7 @@ import {
 function EntryBanners() {
   const dispatch = useAppDispatch();
   function handleStartNewRunClick() {
-    //dispatch(resetBenchmarkCookbooks());
-    dispatch(resetRedteamModels());
+    //dispatch(resetRedteamModels());
   }
   return (
     <div className="grid grid-cols-1 grid-rows-[1rem, 1fr] gap-2">
@@ -27,7 +26,7 @@ function EntryBanners() {
           buttonTextColor={colors.white}
           bannerText={
             <span>
-              Welcome to the MLHC Hackathon!<br/>Use the Red Teaming utility to trick a LLM into saying terrible things.
+              Welcome to the MLHC Hackathon!<br/><br/>Use the Red Teaming utility to trick a LLM into saying terrible things.
             </span>
           }
           buttonText="Get Started"
