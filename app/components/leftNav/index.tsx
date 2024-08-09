@@ -3,16 +3,20 @@ import Link from 'next/link';
 import React from 'react';
 import { colors } from '@/app/views/shared-components/customColors';
 import { Icon, IconName } from '@components/IconSVG';
+import SignOutButton from '@components/sign-out-button';
 
 type menuItem =
   | 'benchmarking'
   | 'redteaming'
   | 'endpoints'
   | 'history'
-  | 'utils';
+  | 'utils'
+  | 'signout';
+
 type LeftNavProps = {
   activeItem?: menuItem;
 };
+
 function LeftNav({ activeItem }: LeftNavProps) {
   const [hoveredItem, setHoveredItem] = React.useState<menuItem | undefined>();
 
@@ -42,14 +46,14 @@ function LeftNav({ activeItem }: LeftNavProps) {
           />
         </Link>
       </li>
-      <li>
+      <li className="flex justify-center">
         <Link
           href="/history"
           onMouseEnter={() => setHoveredItem('history')}
           onMouseLeave={() => setHoveredItem(undefined)}
           className="relative">
           {(hoveredItem === 'history' || activeItem === 'history') && (
-            <p className="absolute tracking-wider text-moonpurplelight right-[80px] w-[200px] text-right">
+            <p className="absolute tracking-wider text-moonpurplelight right-[50px] w-[200px] text-right">
               history
             </p>
           )}
@@ -65,6 +69,26 @@ function LeftNav({ activeItem }: LeftNavProps) {
             size={40}
           />
         </Link>
+      </li>
+      <li className="flex justify-center">
+        <div className="relative">
+          <SignOutButton
+            onMouseEnter={() => setHoveredItem('signout')}
+            onMouseLeave={() => setHoveredItem(undefined)}
+            color={
+              activeItem === 'signout'
+                ? colors.moonpurplelight
+                : hoveredItem === 'signout'
+                  ? colors.moonpurplelight
+                  : colors.moongray[300]
+            }
+          />
+          {(hoveredItem === 'signout' || activeItem === 'signout') && (
+            <p className="absolute tracking-wider text-moonpurplelight right-[50px] w-[200px] text-right">
+              sign out
+            </p>
+          )}
+        </div>
       </li>
     </ul>
   );
