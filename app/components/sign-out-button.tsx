@@ -2,8 +2,15 @@
 
 import { useRouter } from 'next/navigation';
 import { signOut } from 'next-auth/react';
+import { Icon, IconName } from '@components/IconSVG';
 
-export default function SignOutButton() {
+type SignOutButtonProps = {
+  onMouseEnter: () => void;
+  onMouseLeave: () => void;
+  color: string;
+};
+
+export default function SignOutButton({ onMouseEnter, onMouseLeave, color }: SignOutButtonProps) {
   const router = useRouter();
 
   const handleSignOut = async () => {
@@ -15,9 +22,15 @@ export default function SignOutButton() {
   return (
     <button
       onClick={handleSignOut}
-      className="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md transition duration-300 ease-in-out transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50"
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+      className="focus:outline-none focus:ring-2 focus:ring-moonpurplelight focus:ring-opacity-50"
     >
-      Sign Out
+      <Icon
+        color={color}
+        name={IconName.Reset}
+        size={40}
+      />
     </button>
   );
 }
