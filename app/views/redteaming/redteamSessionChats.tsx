@@ -693,7 +693,6 @@ function RedteamSessionChats(props: ActiveSessionProps) {
                         backgroundColor: 'transparent',
                       }}
                     />
-                    {optionsPanel}
                   </div>
                 </div>
               </section>
@@ -734,9 +733,6 @@ function RedteamSessionChats(props: ActiveSessionProps) {
               borderRadius: '0.5rem',
             }}
           />
-          <div className="absolute bottom-[200px] right-[30%]">
-            {optionsPanel}
-          </div>
         </>
       ) : null}
     </>

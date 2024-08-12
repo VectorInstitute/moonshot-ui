@@ -19,16 +19,6 @@ export default function UtilitiesHomePage() {
           testing history
         </h3>
         <Link
-          href="/benchmarking/runs"
-          style={{ width: '40%' }}>
-          <SubmenuButton
-            width="100%"
-            text="View Past Runs"
-            menuIconName={IconName.CheckList}
-            textColor={colors.white}
-          />
-        </Link>
-        <Link
           href="/redteaming/sessions"
           style={{ width: '40%' }}>
           <SubmenuButton
