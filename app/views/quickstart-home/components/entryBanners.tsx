@@ -26,7 +26,7 @@ function EntryBanners() {
           buttonTextColor={colors.white}
           bannerText={
             <span>
-              Welcome to the MLHC Hackathon!<br/><br/>Use the Red Teaming utility to trick a LLM into saying terrible things.
+              Welcome to the MLHC Hackathon!<br/><br/>Use the Red Teaming utility to assess LLMs for clinically relevant scenarios.
             </span>
           }
           buttonText="Get Started"
