@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run prisma:generate:js && next build",
+    "build": "npm run prisma:generate:py && next build",
     "start": "next start --port 4002",
     "start-trace": "node --trace-warnings node_modules/.bin/next",
     "lint": "next lint --quiet && npm run tsc",
@@ -12,7 +12,7 @@
     "tsc": "tsc --noEmit",
     "test": "jest",
     "test:watch": "jest --watch",
-    "prisma:generate:py": "prisma generate",
+    "prisma:generate:py": "prisma generate && prisma migrate dev --name init",
     "prisma:generate:js": "prisma generate --schema=./prisma/schema-js.prisma",
     "add-user": "python add_user.py"
   },
