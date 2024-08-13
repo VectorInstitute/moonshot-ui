@@ -14,7 +14,7 @@ export default async function HomePage() {
     <div className="container mx-auto px-4 py-8">
       <header className="bg-moonwine-800 rounded-lg shadow-lg p-6 mb-8">
         <h1 className="text-3xl font-bold text-white">
-          Welcome, <span className="text-moonwine-300">{session.user?.email}</span>
+          Welcome, <span className="text-moonwine-300">{session.user?.username}</span>
         </h1>
       </header>
       <HomePageView />
