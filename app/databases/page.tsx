@@ -2,7 +2,7 @@ import fs from 'fs/promises';
 import DatabaseTable from './DatabaseTable';
 
 export default async function DatabasesPage() {
-  const dbDir = '/mnt/data/src/mlhc-hackathon/moonshot-data/generated-outputs/databases';
+  const dbDir = '/build/moonshot/moonshot-data/generated-outputs/databases';
   const files = await fs.readdir(dbDir);
   const databases = files.filter(file => file.endsWith('.db'));
 

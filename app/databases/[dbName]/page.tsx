@@ -18,7 +18,7 @@ interface ChatMessage extends DbChatMessage {
 }
 
 export default async function ChatHistoryPage({ params }: { params: { dbName: string } }) {
-  const dbPath = path.join('/mnt/data/src/mlhc-hackathon/moonshot-data/generated-outputs/databases', params.dbName);
+  const dbPath = path.join('/build/moonshot/moonshot-data/generated-outputs/databases', params.dbName);
   const db = await open({
     filename: dbPath,
     driver: sqlite3.Database
