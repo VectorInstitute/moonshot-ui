@@ -20,7 +20,7 @@ export default async function HomePage() {
       </header>
       <nav className="mb-8">
         <Link href="/databases" className="bg-moonwine-600 text-white px-4 py-2 rounded-md hover:bg-moonwine-700 transition-colors">
-          View Databases
+          View Session Histories
         </Link>
       </nav>
       <HomePageView />

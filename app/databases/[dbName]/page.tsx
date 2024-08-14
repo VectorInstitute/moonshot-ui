@@ -49,7 +49,7 @@ export default async function ChatHistoryPage({ params }: { params: { dbName: st
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">Chat History: {params.dbName}</h1>
         <Link href="/databases" className="text-blue-600 hover:underline">
-          Back to Databases
+          Back to session histories
         </Link>
       </div>
       <ChatHistory chatHistory={allMessages} />
