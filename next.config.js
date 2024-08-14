@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: false
+  reactStrictMode: false,
+  experimental: {
+    serverComponentsExternalPackages: ['sqlite3'],
+  },
 }
 
 module.exports = nextConfig
