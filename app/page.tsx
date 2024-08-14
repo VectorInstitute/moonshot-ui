@@ -2,6 +2,7 @@ import { redirect } from 'next/navigation';
 import { getServerSession } from 'next-auth/next';
 import { authOptions } from '@/lib/auth';
 import { HomePageView } from './views/quickstart-home';
+import Link from 'next/link';
 
 export default async function HomePage() {
   const session = await getServerSession(authOptions);
@@ -17,6 +18,11 @@ export default async function HomePage() {
           Welcome, <span className="text-moonwine-300">{session.user?.username}</span>
         </h1>
       </header>
+      <nav className="mb-8">
+        <Link href="/databases" className="bg-moonwine-600 text-white px-4 py-2 rounded-md hover:bg-moonwine-700 transition-colors">
+          View Session Histories
+        </Link>
+      </nav>
       <HomePageView />
     </div>
   );

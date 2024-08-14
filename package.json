@@ -31,8 +31,10 @@
     "react-redux": "9.0.4",
     "react-select": "5.8.0",
     "react-window": "1.8.10",
-    "zod": "^3.23.8",
-    "yup": "1.0.0"
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7",
+    "yup": "1.0.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
@@ -40,8 +42,8 @@
     "@testing-library/jest-dom": "^6.4.5",
     "@testing-library/react": "^15.0.7",
     "@testing-library/user-event": "^14.5.2",
-    "@types/jest": "^29.5.12",
     "@types/bcrypt": "^5.0.2",
+    "@types/jest": "^29.5.12",
     "@types/node": "^20.14.11",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -58,10 +60,10 @@
     "jest-environment-jsdom": "^29.7.0",
     "postcss": "^8",
     "prettier": "^3.2.4",
+    "prisma": "5.11.0",
     "redux-logger": "^3.0.6",
     "tailwindcss": "^3.3.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.5.3",
-    "prisma": "5.11.0"
+    "typescript": "^5.5.3"
   }
 }
