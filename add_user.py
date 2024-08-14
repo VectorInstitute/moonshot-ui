@@ -63,7 +63,7 @@ async def main() -> None:
     Main function to create 20 user accounts and save them to a CSV file.
     """
     user_data = []
-    for i in range(1, 21):
+    for i in range(20):
         username = f"team_{i:02d}"
         password = generate_secure_password()
         user = await add_user(username, password)
