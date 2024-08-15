@@ -1,10 +1,17 @@
 import fs from 'fs/promises';
 import DatabaseTable from './DatabaseTable';
+import { revalidatePath } from 'next/cache';
 
-export default async function DatabasesPage() {
+export const revalidate = 0; // This ensures the page is always dynamically rendered
+
+async function getDatabases(): Promise<string[]> {
   const dbDir = '/build/moonshot/moonshot-data/generated-outputs/databases';
   const files = await fs.readdir(dbDir);
-  const databases = files.filter(file => file.endsWith('.db'));
+  return files.filter(file => file.endsWith('.db'));
+}
+
+export default async function DatabasesPage() {
+  const databases = await getDatabases();
 
   return (
     <div className="flex flex-col min-h-screen bg-gray-100">
