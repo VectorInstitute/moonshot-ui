@@ -3,6 +3,7 @@ import sqlite3 from 'sqlite3';
 import path from 'path';
 import ChatHistory from './ChatHistory';
 import Link from 'next/link';
+import { revalidatePath } from 'next/cache';
 
 interface DbChatMessage {
   id: number;
@@ -17,14 +18,15 @@ interface ChatMessage extends DbChatMessage {
   model: string;
 }
 
-export default async function ChatHistoryPage({ params }: { params: { dbName: string } }) {
-  const dbPath = path.join('/build/moonshot/moonshot-data/generated-outputs/databases', params.dbName);
+export const revalidate = 0; // This ensures the page is always dynamically rendered
+
+async function getChatHistory(dbName: string): Promise<ChatMessage[]> {
+  const dbPath = path.join('/build/moonshot/moonshot-data/generated-outputs/databases', dbName);
   const db = await open({
     filename: dbPath,
     driver: sqlite3.Database
   });
 
-  // Get all table names
   const tables = await db.all("SELECT name FROM sqlite_master WHERE type='table' AND name NOT IN ('sqlite_sequence', 'session_metadata_table', 'runner_cache_table')");
 
   let allMessages: ChatMessage[] = [];
@@ -41,8 +43,13 @@ export default async function ChatHistoryPage({ params }: { params: { dbName: st
 
   await db.close();
 
-  // Sort all messages by prompt_time
   allMessages.sort((a, b) => new Date(b.prompt_time).getTime() - new Date(a.prompt_time).getTime());
+
+  return allMessages;
+}
+
+export default async function ChatHistoryPage({ params }: { params: { dbName: string } }) {
+  const chatHistory = await getChatHistory(params.dbName);
 
   return (
     <div className="container mx-auto px-4 py-8">
@@ -52,7 +59,7 @@ export default async function ChatHistoryPage({ params }: { params: { dbName: st
           Back to session histories
         </Link>
       </div>
-      <ChatHistory chatHistory={allMessages} />
+      <ChatHistory chatHistory={chatHistory} />
     </div>
   );
 }
